@@ -1,6 +1,6 @@
 [project]
 name = "commitizen-deno-provider"
-version = "0.1.0"
+version = "0.1.1"
 description = "A deno provider for commitizen"
 readme = "README.md"
 authors = [
