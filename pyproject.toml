@@ -1,0 +1,43 @@
+[project]
+name = "commitizen-deno-provider"
+version = "0.1.0"
+description = "A deno provider for commitizen"
+readme = "README.md"
+authors = [
+  {name = "dhmmasson", email = "dhm.masson@gmail.com" }
+]
+dependencies = [
+  "commitizen>3.29",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+
+  # Indicate who your project is intended for
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Build Tools",
+
+  # Pick your license as you wish (see also "license" above)
+  "License :: OSI Approved :: MIT License",
+
+  # Specify the Python versions you support here.
+  "Programming Language :: Python :: 3.12",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/dhmmasson/commitizen-deno-provider"
+"Bug Reports" = "https://github.com/dhmmasson/commitizen-deno-provider/issues"
+"Funding" = "https://github.com/sponsors/dhmmasson"
+"Source" = "https://github.com/dhmmasson/commitizen-deno-provider"
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "$version"
+version_scheme = "pep440"
+version_provider = "pep621"
+update_changelog_on_bump = true
