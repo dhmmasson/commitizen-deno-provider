@@ -24,6 +24,10 @@ classifiers = [
 ]
 
 
+[project.entry-points."commitizen.plugin"]
+deno-provider = "deno_provider:DenoProvider"
+
+
 [project.urls]
 "Homepage" = "https://github.com/dhmmasson/commitizen-deno-provider"
 "Bug Reports" = "https://github.com/dhmmasson/commitizen-deno-provider/issues"
