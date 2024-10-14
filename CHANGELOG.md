@@ -1,3 +1,9 @@
+## v0.1.2 (2024-10-14)
+
+### Fix
+
+- move deno_provide to its own folder
+
 ## v0.1.1 (2024-10-10)
 
 ### Fix
