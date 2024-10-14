@@ -14,16 +14,11 @@ class DenoProvider(VersionProvider):
 
     indent: ClassVar[int] = 2
     package_filename = "deno.json"
-    lock_filename = "package-lock.json"
     jsr_filename = "jsr.json"
 
     @property
     def package_file(self) -> Path:
         return Path() / self.package_filename
-
-    @property
-    def lock_file(self) -> Path:
-        return Path() / self.lock_filename
 
     @property
     def jsr_file(self) -> Path:
@@ -43,13 +38,6 @@ class DenoProvider(VersionProvider):
         self.package_file.write_text(
             json.dumps(package_document, indent=self.indent) + "\n"
         )
-        if self.lock_file.exists():
-            lock_document = self.set_lock_version(
-                json.loads(self.lock_file.read_text()), version
-            )
-            self.lock_file.write_text(
-                json.dumps(lock_document, indent=self.indent) + "\n"
-            )
         if self.jsr_file.exists():
             jsr_document = self.set_jsr_version(
                 json.loads(self.jsr_file.read_text()), version
@@ -67,16 +55,8 @@ class DenoProvider(VersionProvider):
         document["version"] = version
         return document
 
-    def set_lock_version(
-        self, document: dict[str, Any], version: str
-    ) -> dict[str, Any]:
-        document["version"] = version
-        document["packages"][""]["version"] = version
-        return document
-
     def set_jsr_version(
         self, document: dict[str, Any], version: str
     ) -> dict[str, Any]:
         document["version"] = version
-        document["packages"][""]["version"] = version
         return document
