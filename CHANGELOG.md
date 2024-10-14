@@ -1,3 +1,9 @@
+## v1.0.0 (2024-10-14)
+
+### Fix
+
+- remove deno.lock from the provider
+
 ## v0.1.2 (2024-10-14)
 
 ### Fix
