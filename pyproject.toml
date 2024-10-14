@@ -24,8 +24,8 @@ classifiers = [
 ]
 
 
-[project.entry-points."commitizen.plugin"]
-deno-provider = "deno_provider:DenoProvider"
+[project.entry-points."commitizen.provider"]
+deno-provider = "deno_provider.deno_provider:DenoProvider"
 
 
 [project.urls]
